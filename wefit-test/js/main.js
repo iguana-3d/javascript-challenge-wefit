@@ -62,44 +62,34 @@ elements.forEach((element) => {
 
 //List
 let list = document.querySelector('#list-group');
-
 let firstItem = list.querySelector('li').cloneNode(true);
 firstItem.style.background = '#FFFFFF';
 firstItem.style.color = '#000000';
 firstItem.style.transition = 'all 0.2s';
 firstItem.style.borderColor = 'rgba(0, 0, 0, 0.125)';
 firstItem.textContent = 'Primeiro item';
-
-let secondItem = firstItem.cloneNode(true);
-secondItem.textContent = 'Segundo item';
-
-let thirthItem = firstItem.cloneNode(true);
-thirthItem.textContent = 'Terceiro item';
-
-let fourthItem = firstItem.cloneNode(true);
-fourthItem.textContent = 'Quarto item';
-
-let fivethItem = firstItem.cloneNode(true);
-fivethItem.textContent = 'Quinto item';
-
 list.innerHTML = '';
 
-list.appendChild(firstItem);
-list.appendChild(secondItem);
-list.appendChild(thirthItem);
-list.appendChild(fourthItem);
-list.appendChild(fivethItem);
+function createElementsInList(textContent) {
+  let item = firstItem.cloneNode(true);
+  item.textContent = `${textContent}`;
+  list.appendChild(item);
 
-Array.from(list.children).map((element) => {
-  element.addEventListener('mouseover', () => {
-    element.style.background = '#007bff';
-    element.style.color = '#FFFFFF';
-    element.style.borderColor = '#007bff';
+  item.addEventListener('mouseover', () => {
+    item.style.background = '#007bff';
+    item.style.color = '#FFFFFF';
+    item.style.borderColor = '#007bff';
   });
 
-  element.addEventListener('mouseout', () => {
-    element.style.background = '#FFFFFF';
-    element.style.color = '#000000';
-    element.style.borderColor = 'rgba(0, 0, 0, 0.125)';
+  item.addEventListener('mouseout', () => {
+    item.style.background = '#FFFFFF';
+    item.style.color = '#000000';
+    item.style.borderColor = 'rgba(0, 0, 0, 0.125)';
   });
-});
+}
+
+createElementsInList('Primeiro item');
+createElementsInList('Segundo item');
+createElementsInList('Terceiro item');
+createElementsInList('Quarto item');
+createElementsInList('Quinto item');
