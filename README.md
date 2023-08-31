@@ -1,3 +1,3 @@
 # javascript-challenge-wefit
 
-Para iniciar o projeto basta iniciar o index.html com o live-server
+Para iniciar o projeto basta iniciar o index.html dentro de `wefit-test` com o live-server
